@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .main-background-light {
+    @apply bg-[#EFEFEF]
+  }
+
+  .main-background-dark {
+    @apply bg-[#18181C]
+  }
+ 
+  .search-button-bg {
+    @apply bg-[#F5F5F5] placeholder-gray-900 hover:bg-[#EDEDED] group-hover:button-hover
+  } 
+
+  .button-hover {
+    @apply bg-[#EDEDED]
+  }
+
+  .navlink-hover {
+    @apply bg-[#C8BCF6]
+  }
+
+  .navlink-style {
+    @apply flex flex-wrap items-center px-8 py-3 cursor-pointer hover:navlink-hover active:opacity-45
+  }
+
+  /* Dark mode components */
+  .darkmode-button-bg {
+    @apply bg-[#C8BCF6]
+  }
+
+  .lightmode-button-bg {
+    @apply bg-[#979797]
+  }
+
+  /* Dark mode text */
+  .light-mode {
+    @apply text-black bg-white
+  }
+
+  .dark-mode {
+    @apply text-white bg-[#09090A]
+  }
+
+  .header-light-mode {
+    @apply text-black bg-[#FEFEFF] border-l border-gray-200 shadow-sm
+  }
+
+  .header-dark-mode {
+    @apply text-white bg-[#09090F] border-l border-gray-800 shadow-sm
+  }
+
+  .search-darkmode {
+    @apply bg-[#1F1F22] placeholder-[#F5F5F5] hover:bg-[#4C4C52] group-hover:bg-[#4C4C52]
+  }
+
+  .hamburger-btn {
+    @apply p-4 w-fit cursor-pointer rounded-md active:opacity-45
+  }
+}
