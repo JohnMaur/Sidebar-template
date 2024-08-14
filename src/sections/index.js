@@ -1,4 +1,4 @@
-import NavigationBar from "./navigationBar";
+import NavigationBar from "./NavigationBar";
 import Header from "./Header";
 
 export {
