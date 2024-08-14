@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import avatar from "../assets/images/avatar.png";
 import { searchIcon, dashboard, revenueIcon, notificationIcon, analyticIcon, inventoryIcon, logoutIcon, lightmodeIcon, darkmodeIcon, searchDarkmode, analyticDarkmode, inventoryDarkmode, logoutDarkmode, notificationDarkmode, revenueDarkmode, dashboardDarkmode, dashboardLight, revenueLight, notificationLight, analyticLight, inventoryLight, logoutLight } from "../constant/icons";
 import DarkmodeButton from '../components/DarkmodeButton';
+import NavItem from '../components/NavItem';
 
 const NavigationBar = ({ isDarkMode, toggleMode, isNavCollapsed, setIsNavCollapsed }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 640) {
@@ -21,10 +20,10 @@ const NavigationBar = ({ isDarkMode, toggleMode, isNavCollapsed, setIsNavCollaps
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [setIsNavCollapsed]);
+  }, []);
 
   return (
-    <nav className={`flex flex-wrap h-screen flex-col shadow-sm justify-between pb-2 ${isDarkMode ? "dark-mode" : "light-mode"}`}>
+    <nav className={`flex flex-wrap h-screen flex-col shadow-sm justify-between pb-2 max-sm:justify-normal ${isDarkMode ? "dark-mode" : "light-mode"}`}>
       <div>
         <div className="py-3 flex gap-2 mx-5 items-center">
           <img
@@ -62,129 +61,62 @@ const NavigationBar = ({ isDarkMode, toggleMode, isNavCollapsed, setIsNavCollaps
         </div>
 
         <div className="mt-5">
-          <a href="#">
-            <div
-              className="navlink-style"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              <img
-                src={
-                  isHovered
-                    ? (isDarkMode ? dashboardLight : dashboard)
-                    : (isDarkMode ? dashboardDarkmode : dashboard)
-                }
-                alt="Dashboard Icon"
-                width={18}
-                height={18}
-              />
-              {!isNavCollapsed && <p className="text-sm font-palanquin ml-3">Dashboard</p>}
-            </div>
-          </a>
+          <NavItem
+            isDarkMode={isDarkMode}
+            isNavCollapsed={isNavCollapsed}
+            icon={isDarkMode ? dashboardDarkmode : dashboard}
+            iconHovered={isDarkMode ? dashboardLight : dashboard}
+            tooltipText="Dashboard"
+            link="#"
+          />
 
-          <a href="#">
-            <div
-              className="navlink-style"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              <img
-                src={
-                  isHovered
-                    ? (isDarkMode ? revenueLight : revenueIcon)
-                    : (isDarkMode ? revenueDarkmode : revenueIcon)
-                }
-                alt="Revenue Icon"
-                width={18}
-                height={18}
-              />
-              {!isNavCollapsed && <p className="text-sm font-palanquin ml-3">Revenue</p>}
-            </div>
-          </a>
+          <NavItem
+            isDarkMode={isDarkMode}
+            isNavCollapsed={isNavCollapsed}
+            icon={isDarkMode ? revenueDarkmode : revenueIcon}
+            iconHovered={isDarkMode ? revenueLight : revenueIcon}
+            tooltipText="Revenue"
+            link="#"
+          />
 
-          <a href="#">
-            <div
-              className="navlink-style"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              <img
-                src={
-                  isHovered
-                    ? (isDarkMode ? notificationLight : notificationIcon)
-                    : (isDarkMode ? notificationDarkmode : notificationIcon)
-                }
-                alt="Notification Icon"
-                width={18}
-                height={18}
-              />
-              {!isNavCollapsed && <p className="text-sm font-palanquin ml-3">Notification</p>}
-            </div>
-          </a>
+          <NavItem
+            isDarkMode={isDarkMode}
+            isNavCollapsed={isNavCollapsed}
+            icon={isDarkMode ? notificationDarkmode : notificationIcon}
+            iconHovered={isDarkMode ? notificationLight : notificationIcon}
+            tooltipText="Notification"
+            link="#"
+          />
 
-          <a href="#">
-            <div
-              className="navlink-style"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              <img
-                src={
-                  isHovered
-                    ? (isDarkMode ? analyticLight : analyticIcon)
-                    : (isDarkMode ? analyticDarkmode : analyticIcon)
-                }
-                alt="Analytic Icon"
-                width={18}
-                height={18}
-              />
-              {!isNavCollapsed && <p className="text-sm font-palanquin ml-3">Analytic</p>}
-            </div>
-          </a>
+          <NavItem
+            isDarkMode={isDarkMode}
+            isNavCollapsed={isNavCollapsed}
+            icon={isDarkMode ? analyticDarkmode : analyticIcon}
+            iconHovered={isDarkMode ? analyticLight : analyticIcon}
+            tooltipText="Analytic"
+            link="#"
+          />
 
-          <a href="#">
-            <div
-              className="navlink-style"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              <img
-                src={
-                  isHovered
-                    ? (isDarkMode ? inventoryLight : inventoryIcon)
-                    : (isDarkMode ? inventoryDarkmode : inventoryIcon)
-                }
-                alt="Inventory Icon"
-                width={18}
-                height={18}
-              />
-              {!isNavCollapsed && <p className="text-sm font-palanquin ml-3">Inventory</p>}
-            </div>
-          </a>
-
+          <NavItem
+            isDarkMode={isDarkMode}
+            isNavCollapsed={isNavCollapsed}
+            icon={isDarkMode ? inventoryDarkmode : inventoryIcon}
+            iconHovered={isDarkMode ? inventoryLight : inventoryIcon}
+            tooltipText="Inventory"
+            link="#"
+          />
         </div>
       </div>
 
       <div>
-        <a href="#">
-          <div
-            className="navlink-style"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            <img
-              src={
-                isHovered
-                  ? (isDarkMode ? logoutLight : logoutIcon)
-                  : (isDarkMode ? logoutDarkmode : logoutIcon)
-              }
-              alt="Logout Icon"
-              width={18}
-              height={18}
-            />
-            {!isNavCollapsed && <p className="text-sm font-palanquin ml-3">Logout</p>}
-          </div>
-        </a>
+        <NavItem
+          isDarkMode={isDarkMode}
+          isNavCollapsed={isNavCollapsed}
+          icon={isDarkMode ? logoutDarkmode : logoutIcon}
+          iconHovered={isDarkMode ? logoutLight : logoutIcon}
+          tooltipText="Logout"
+          link="#"
+        />
 
         <div className="flex items-center px-8 py-3">
           <img
