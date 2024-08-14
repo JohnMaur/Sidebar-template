@@ -4,7 +4,7 @@ const DarkmodeButton = ({ isDarkMode, toggleMode }) => {
   return (
     <button
       onClick={toggleMode}
-      className={`relative flex items-center w-10 h-5 rounded-full ml-2 transition-colors duration-[1.5s] ease-in-out max-sm:hidden ${
+      className={`relative flex items-center w-10 h-5 rounded-full ml-2 transition-colors duration-[1.5s] ease-in-out ${
         isDarkMode ? 'lightmode-button-bg' : 'darkmode-button-bg'
       }`}
     >
