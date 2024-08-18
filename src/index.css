@@ -48,11 +48,11 @@
   }
 
   .header-light-mode {
-    @apply text-black bg-[#FEFEFF] border-l border-gray-200 shadow-sm
+    @apply text-black bg-[#FEFEFF] border-l border-gray-200 shadow-sm h-12
   }
 
   .header-dark-mode {
-    @apply text-white bg-[#09090F] border-l border-gray-800 shadow-sm
+    @apply text-white bg-[#09090F] border-l border-gray-800 shadow-sm h-12
   }
 
   .search-darkmode {
@@ -60,6 +60,6 @@
   }
 
   .hamburger-btn {
-    @apply p-4 w-fit cursor-pointer rounded-md active:opacity-45
+    @apply w-fit cursor-pointer rounded-md active:opacity-45 p-4
   }
 }

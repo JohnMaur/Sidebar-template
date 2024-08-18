@@ -1,8 +1,8 @@
-import { hamburgerButtonDark, hamburgerButtonLight } from "../constant/icons"
+import { hamburgerButtonDark, hamburgerButtonLight } from "../constant/icons";
 
 const Header = ({ isDarkMode, toggleNav }) => {
   return (
-    <header className={`${isDarkMode ? "header-dark-mode" : "header-light-mode"}`}>
+    <header className={`flex max-md:justify-end fixed ${isDarkMode ? "header-dark-mode" : "header-light-mode"} w-full`}>
       <button 
         className={`hamburger-btn ${isDarkMode ? "hover:bg-[#C8BCF6]" : "hover:bg-[#EDEDED]"}`}
         onClick={toggleNav}
@@ -12,10 +12,11 @@ const Header = ({ isDarkMode, toggleNav }) => {
           alt="Hamburger button"
           width={20}
           height={20}
+          className="object-contain"
         />
       </button>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

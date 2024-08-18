@@ -1,26 +1,9 @@
-import React, { useEffect } from 'react';
 import avatar from "../assets/images/avatar.png";
 import { searchIcon, dashboard, revenueIcon, notificationIcon, analyticIcon, inventoryIcon, logoutIcon, lightmodeIcon, darkmodeIcon, searchDarkmode, analyticDarkmode, inventoryDarkmode, logoutDarkmode, notificationDarkmode, revenueDarkmode, dashboardDarkmode, dashboardLight, revenueLight, notificationLight, analyticLight, inventoryLight, logoutLight } from "../constant/icons";
 import DarkmodeButton from '../components/DarkmodeButton';
 import NavItem from '../components/NavItem';
 
-const NavigationBar = ({ isDarkMode, toggleMode, isNavCollapsed, setIsNavCollapsed }) => {
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 640) {
-        setIsNavCollapsed(true); // Automatically collapse nav if screen width <= 640px
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    // Check on initial render
-    handleResize();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+const NavigationBar = ({ isDarkMode, toggleMode, isNavCollapsed}) => {
 
   return (
     <nav className={`flex flex-wrap h-screen flex-col shadow-sm justify-between pb-2 max-sm:justify-normal ${isDarkMode ? "dark-mode" : "light-mode"}`}>
