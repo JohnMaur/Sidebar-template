@@ -48,11 +48,11 @@
   }
 
   .header-light-mode {
-    @apply text-black bg-[#FEFEFF] border-l border-gray-200 shadow-sm h-12
+    @apply text-black bg-[#FEFEFF] border-l border-gray-200 shadow-sm h-14
   }
 
   .header-dark-mode {
-    @apply text-white bg-[#09090F] border-l border-gray-800 shadow-sm h-12
+    @apply text-white bg-[#09090F] border-l border-gray-800 shadow-sm h-14
   }
 
   .search-darkmode {

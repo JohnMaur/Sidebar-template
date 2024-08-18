@@ -37,13 +37,11 @@ const App = () => {
 
       {/* Mobile dropdown menu */}
       {isNavCollapsed && (
-        <div className={`max-md:block md:hidden fixed top-0 right-0 w-full h-full bg-opacity-50 ${isDarkMode ? "main-background-dark text-white" : "main-background-light text-black"} z-10`}>
-          <MobileDropdown
-            isDarkMode={isDarkMode}
-            toggleMode={toggleMode}
-            toggleNav={toggleNav}
-          />
-        </div>
+        <MobileDropdown
+          isDarkMode={isDarkMode}
+          toggleMode={toggleMode}
+          toggleNav={toggleNav}
+        />
       )}
     </main>
   )
